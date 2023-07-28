@@ -9,7 +9,8 @@ def guardar_hello_world_en_excel():
 
     # Verificamos si la carpeta "/ruta/del/workspace/mi_proyecto/C:\Test" existe, si no, la creamos
     if not os.path.exists("/ruta/del/workspace/mi_proyecto/C:\\Test"):
-        os.makedirs("/ruta/del/workspace/mi_proyecto/C:\\Test")
+        os.makedirs(os.path.join(os.environ['WORKSPACE'], "C:\\Test"), exist_ok=True)
+
 
     # Guardar el DataFrame en un archivo Excel en la carpeta "/ruta/del/workspace/mi_proyecto/C:\Test"
     archivo_excel = "/ruta/del/workspace/mi_proyecto/C:\\Test\\Hello_World.xlsx"
