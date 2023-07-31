@@ -24,8 +24,8 @@ def guardar_hello_world_en_excel():
     commit_message = "Agregando archivo Excel generado por Jenkins"
     repo.index.commit(commit_message)
 
-    # Cambiar a la rama principal (main) y asegurarnos de que esté actualizada
-    repo.git.pull('origin', 'main')
+    # Cambiar a la rama "Rodrigo" y asegurarnos de que esté actualizada
+    repo.git.pull('origin', 'Rodrigo')
 
     # Hacer push al repositorio remoto en GitHub
     remote_origin = repo.remote(name="origin")
