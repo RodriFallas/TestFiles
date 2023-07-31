@@ -8,7 +8,7 @@ def guardar_hello_world_en_excel():
     df = pd.DataFrame({'Palabra': [palabra]})
 
     # Especificar una ruta absoluta para el archivo Excel
-    archivo_excel = "C:/Test/Hello_World.xlsx"
+    archivo_excel = "C:\Test\Hello_World.xlsx"
 
     # Guardar el DataFrame en un archivo Excel
     df.to_excel(archivo_excel, index=False)
