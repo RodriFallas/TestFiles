@@ -17,15 +17,16 @@ def guardar_hello_world_en_excel():
     print(f"El archivo '{archivo_excel}' ha sido creado y la palabra 'Hello World' ha sido guardada en él.")
 
     # Agregar el archivo Excel al área de preparación de Git
-    repo = Repo(directorio_trabajo)
-    repo.git.add(archivo_excel)
+    repo = Repo.init(directorio_trabajo)  # Inicializar el repositorio en el directorio de trabajo
+    repo.index.add([archivo_excel])
 
     # Hacer el commit con un mensaje
     commit_message = "Agregando archivo Excel generado por Jenkins"
     repo.index.commit(commit_message)
 
     # Hacer push al repositorio remoto en la rama "main"
-    remote_origin = repo.remote(name="origin")
+    url = 'https://github.com/RodriFallas/TestFiles.git'
+    remote_origin = repo.create_remote('origin', url=url)
     remote_origin.push("HEAD:main")
 
     print(f"Se ha hecho el commit y el push al repositorio remoto en la rama 'main'.")
