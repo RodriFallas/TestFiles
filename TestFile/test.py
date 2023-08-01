@@ -24,9 +24,15 @@ def guardar_hello_world_en_excel():
     commit_message = "Agregando archivo Excel generado por Jenkins"
     repo.index.commit(commit_message)
 
+    # Verificar si el control remoto 'origin' ya existe
+    if 'origin' in [remote.name for remote in repo.remotes]:
+        remote_origin = repo.remote('origin')
+    else:
+        # Crear el control remoto 'origin' si no existe
+        url = 'https://github.com/RodriFallas/TestFiles.git'
+        remote_origin = repo.create_remote('origin', url=url)
+
     # Hacer push al repositorio remoto en la rama "main"
-    url = 'https://github.com/RodriFallas/TestFiles.git'
-    remote_origin = repo.create_remote('origin', url=url)
     remote_origin.push("HEAD:main")
 
     print(f"Se ha hecho el commit y el push al repositorio remoto en la rama 'main'.")
