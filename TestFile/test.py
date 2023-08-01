@@ -29,7 +29,7 @@ def guardar_hello_world_en_excel():
         remote_origin = repo.remote('origin')
     else:
         # Crear el control remoto 'origin' si no existe
-        url = 'https://github.com/RodriFallas/TestFiles.git'
+        url = 'https://140.82.114.4/RodriFallas/TestFiles.git'
         remote_origin = repo.create_remote('origin', url=url)
 
     # Hacer push al repositorio remoto en la rama "main"
