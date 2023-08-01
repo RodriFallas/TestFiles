@@ -24,14 +24,11 @@ def guardar_hello_world_en_excel():
     commit_message = "Agregando archivo Excel generado por Jenkins"
     repo.index.commit(commit_message)
 
-    # Hacer pull en la rama remota "main"
-    repo.git.pull('origin', 'main')
-
     # Hacer push al repositorio remoto en la rama "main"
     remote_origin = repo.remote(name="origin")
     remote_origin.push("HEAD:main")
 
-    print(f"Se ha hecho el commit, el pull y el push al repositorio remoto en la rama 'main'.")
+    print(f"Se ha hecho el commit y el push al repositorio remoto en la rama 'main'.")
 
 if __name__ == "__main__":
     guardar_hello_world_en_excel()
