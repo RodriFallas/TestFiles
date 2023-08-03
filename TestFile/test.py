@@ -26,7 +26,7 @@ def guardar_hello_world_en_excel():
     commit_message = "Agregando archivo Excel generado por Jenkins"
     repo.index.commit(commit_message)
 
-    print("Se ha hecho el commit localmente. Los cambios no se enviarán al repositorio remoto.")
+    print("Test.")
 
 if __name__ == "__main__":
     guardar_hello_world_en_excel()
